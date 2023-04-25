@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8 />
+  <title>GBR Bleaching Occurrences</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #d3d3d3;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      color: #3d3d3d;
+    }
+
+    section {
+      width: 80%;
+      margin: 10px auto;
+    }
+
+    h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      font-size: 2.5em;
+      /* The em unit. 2.5x the current size */
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      color: gray;
+      font-size: 1.25em;
+      letter-spacing: .04em;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.5em;
+    }
+
+    a {
+      color: #005daa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 10px 0
+    }
+
+    #map {
+      width: 100%;
+      margin: 0px auto;
+
+    }
+
+    .max-image-width {
+      width: 100%;
+    }
+
+
+    .linkbox {
+      margin: 3px 0 20px 0;
+      display: block;
+      font-weight: 300;
+    }
+
+    hr {
+      border: 0px;
+      border-bottom: 1px solid #3d3d3d;
+      padding-top: 20px;
+    }
+
+    /* Use float property to make two-column layout. */
+
+    .first-column {
+      float: left;
+      width: 48%;
+      padding-right: 20px;
+    }
+
+    .column {
+      float: left;
+      width: 48%;
+    }
+
+    /* Clear floats after the columns */
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* When browser is 800px wide or less */
+
+    @media screen and (max-width: 800px) {
+
+      .first-column,
+      .column {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <!-- Add map to top of page and make it stretch to fill browser window. -->
+    <img class="max-image-width" src="coral bleach.jpg">
+    Coral near Magnetic Island, after bleaching event 2020. 
+    <p class="linkbox">Link to <a href="https://www.abc.net.au/news/2021-11-05/great-barrier-reef-coral-bleaching-study/100592796">news article</a>
+
+    <!-- Create a two column layout for map information. -->
+    
+
+    <h1>Great Barrier Reef Bleaching Occurrences, 1980-2002 </h1>
+    <h2>Authored by: Schroeder1303</h2>
+
+    <div class="row">
+
+      <!-- First column, the left half -->
+      <div class="first-column">
+        <br/> <br/>
+        <p>The Great Barrier Reef is the largest and most well-known coral reef system in the world.
+            Covering an area of more than 344,000 square kilometers (132,800 miles), it is listed as a UNESCO 
+            World Heritage site.  </p> <br/>
+         <p>Marine Protected Areas (MPAs) are areas that are allocated to achieve long-term conservation goals.
+            There are several different types - ranging from no access (typically research only) to multiple use.
+            Read more about <a href="https://marineprotectedareas.noaa.gov/aboutmpas/termsdefinitions/">the different definitions and use types</a>.
+        </p> <br/>
+        <p>Coral bleaching occurs when stress factors (either from high water temperatures, overexposure to sunlight, 
+            pollution or exposure to air from extremely low tides) causes coral to expel the algae that lives on them,
+            causing the coral to turn white.  The coral is not dead, but the algae is their primary food source 
+            thus making them susceptible to disease and death.  Fortunately once coral has been bleached, 
+            it cannot be bleached again and if the stressors do not remain for an extended period of time, the coral
+            can recover.
+            Read more about <a href="https://oceanservice.noaa.gov/facts/coral_bleach.html">coral bleaching</a>.
+            
+        </p>
+        <br/> <br/> <br/> 
+        <p>The first map on the right shows various MPAs within the Great Barrier Reef Marine Park Boundary.</a></p>
+        <br/>
+        <p>The second map on the right shows sites where bleaching has been recoreded and the severity of the bleaching
+            event.  These points were layered with addition blending.
+        </p>
+        <p>
+      </div>
+
+      <!-- Second column, the right half -->
+      <div class="column">
+        <!-- Challenge map -->
+        <img class="max-image-width" src="gbr_bleach_1200px.png">
+        <p class="linkbox">Link to higher resolution <a href= "gbr_bleach_8000px.png"> image</a> </p>
+
+        </div>
+        </div>
+    <img class="max-image-width" src="gbr_hexbin_1200px.png">
+    <p class="linkbox">Link to higher resolution <a href= "gbr_hexbin_8000px.png"> image</a> </p>
+    The above map shows bleaching sites joined in 10 mile hexbins.  The hexbins represent the averaged severity
+    levels of all the bleaching points that were observed in that area.
+    </div>
+</br>
+    <h3>Map details</h3>
+    <p>June 2022<br/>
+      These maps were made using QGIS 3.24 and Windows 10. <br/>
+      CRS: 3857 <br/>
+      
+
+      <p>
+    <h4>Data Information</h4>
+        <p>The Great Barrier Reef Marine Park Boundary data was requested from the Austrailian Government's
+      <a href= "http://www.gbrmpa.gov.au/geoportal/catalog/main/home.page">Great Barrier Reef Marine Park Authority.</a> 
+        © Great Barrier Reef Marine Park Authority 2014. Updated data available at 
+        <a href= "http://www.gbrmpa.gov.au/geoportal/".></a>
+        And was accessed June 2022.
+      <p>The marine protected area data was accessed from 
+        <a href="https://datasets.wri.org/dataset/marine-protected-areas-in-coral-reef-regions-of-the-world">World Resources Institute.</a>
+        Burke, L., K. Reytar, M. Spalding, and A. Perry. Reefs at Risk Revisited. (Washington, DC, USA: World Resources Institute, 2011).
+      </p>
+      
+        <p>
+    <p>The bleaching point dataset was accessed June 2022 from 
+        <a href= "https://datasets.wri.org/dataset/bleaching-observations-1963-2010">World Resources Institute.</a>
+        Originally found at: ReefBase. Coral Bleaching dataset. Available at http://www.reefbase.org, 2011.<p>
+    </p>
+    <p> 
+    </p>
+
+    <p>
+     </p>
+    <hr>
+    
+    <ul>
+      <li>Visit my Github account <a href='https://github.com/schroeder1303'>schroeder1303</a> </li>
+      <li><a href="https://newmapsplus.github.io">New Maps Plus</a></li>
+    </ul>
+  </section>
+
+</body>
+
+</html>
