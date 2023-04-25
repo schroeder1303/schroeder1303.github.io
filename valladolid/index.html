@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset=utf-8 />
+	<title>Leaflet Lab 06 Template</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<link rel='icon' href='https://newmapsplus.github.io/favicon.ico' type='image/x-icon' />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Add Leaflet CSS library. Check to make sure it is latest version. -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+	<!-- Add Leaflet plugin CSS after Leaflet library. -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.72.2/dist/L.Control.Locate.css" />
+
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Quicksand', sans-serif;
+			font-size: 100%;
+			color: #3d3d3d;
+		}
+
+		h1 {
+			position: absolute;
+			margin-top: 0;
+			top: 10px;
+			left: 15px;
+			font-size: 1.5em;
+			font-family: 'Quicksand', sans-serif;
+			font-weight: 700;
+			letter-spacing: .04em;
+			padding: 10px 15px;
+			/* Add styles to match Leaflet UI elements */
+			background: rgba(256, 256, 256, .3);
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			z-index: 800;
+		}
+
+		h2 {
+			font-family: 'Quicksand', sans-serif;
+			font-size: 1.2em;
+			letter-spacing: .04em;
+
+		}
+
+		#map {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+		}
+
+		#about {
+			position: absolute;
+			bottom: 20px;
+			left: 15px;
+			width: 280px;
+			padding: 0 15px;
+			/* Add styles to match Leaflet UI elements */
+			background: rgba(256, 256, 256, .3);
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			z-index: 800;
+		}
+
+		p {
+			font-size: .9em;
+			line-height: 1.5em;
+		}
+
+		a {
+			color: #005daa;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		/* Leaflet popup styles */
+		.leaflet-popup-content {
+			font-family: 'Quicksand', sans-serif;
+			font-size: 1.1em;
+		}
+
+		/* 
+		When browser is 900px high or less
+		make the font a little smaller.
+		 */
+		@media screen and (max-height: 400px) {
+
+			#about p,
+			#about h2 {
+				font-size: .6em;
+			}
+
+			h1 {
+				font-size: 1.2em;
+			}
+
+			#about h2 {
+				font-size: 1em;
+			}
+
+			.leaflet-popup-content {
+				font-family: 'Quicksand', sans-serif;
+				font-size: 0.9em;
+			}
+		}
+
+		/* Don't display info block when window is very small */
+		@media screen and (max-height: 200px) {
+
+			#about {
+				display: none;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>Walking in Valladolid, Spain</h1>
+
+	<div id='map'></div>
+
+	<section id="about">
+		<h2>About these spots</h2>
+			<p>The stops made on this map were frequently visited by myself when I was a student
+				at the Universidad de Valladolid in Spain from 2011-2012.  Unlike Madrid, Valladolid 
+				does not have a metro system and instead relies on buses and cabs.  Unfortunately for me,
+				my apartment building was not on a bus line and so I spent most of my time walking.  The spots
+				on this map are some of my more frequently visited: my apartment, gym, class building, cafe, and grocery.
+				La Romana Pizzería isn't the best pizza in the world, but it was the best I found in Valladolid!</p>
+			<p>Visit <a href="https://www.spain.info/en/destination/valladolid/">Valladolid</a> tourism info. </p>
+			<p>Map authored by me, Savannah H.</p>
+			<p>Follow me on <a href="www.github.com/schroeder1303">Github.</a></p>
+	</section>
+	<!-- Add Leaflet JS library. Check to make sure it is latest version. -->
+	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+	<!-- Load a Leaflet plugin to provide geolocation. Load this after Leaflet JS.-->
+	<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.72.2/src/L.Control.Locate.min.js" ></script>
+	
+	<!-- Add the route.js file to the page. -->
+	<script src="data/route.js"></script>
+
+
+	<script>
+		var options = {
+			center: [38.038685, -84.504164],
+			zoom: 12,
+			zoomControl: false
+		}
+
+		var locate_options = {
+			position: 'topright',
+			strings: {
+				title: "Show me where I am!"
+			}
+		}
+//debugger
+		var map = L.map('map', options);
+
+		// add zoom control to top right window position
+		L.control.zoom({
+			position: 'topright'
+		}).addTo(map);
+
+		// add geolocation control to top right window position (Leaflet can handle multiple top-right elements)
+		L.control.locate(locate_options).addTo(map);
+
+		// Get basemap URL from Leaflet Providers
+		var basemap_url = 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'
+
+		// Get basemap attributes from Leaflet Providers
+		var basemap_attributes = {
+			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+			subdomains: 'abcd',
+			maxZoom: 19
+		};
+		// requests some map tiles
+		var tiles = L.tileLayer(basemap_url, basemap_attributes);
+
+		map.addLayer(tiles);
+
+		var myRoute = L.geoJson(routeData, {
+
+			filter : function(feature) {
+			if(feature.geometry.type == "LineString") {
+			return feature;
+			}
+			},
+			style : function(feature) {
+
+				return {
+				color: "#005DAA",
+				weight: 4,
+				opacity: .6,
+				dashArray: "5, 5"
+				};
+			},
+			onEachFeature: function(feature, layer) {
+    			layer.on({
+      				mouseover: function (e) {
+        				layer.setStyle({ color: "green" });
+      				},
+      				mouseout: function (e) {
+        				layer.setStyle({ color: "#005DAA" });
+      				}
+    			});
+  			}
+
+		}).addTo(map);
+
+		var myStops = L.geoJson(routeData, {
+
+			filter : function(feature) {
+				if(feature.geometry.type == "Point") {
+					return feature;
+				}
+			},
+			onEachFeature : function(feature, layer) {
+
+				layer.bindPopup(feature.properties.name); 
+				layer.on('click', function(e) {
+            		map.setView(e.target.getLatLng(), 19);
+        		});
+    		}
+		}).addTo(map);
+
+		map.fitBounds(myRoute.getBounds());
+
+
+		
+	</script>
+
+</body>
+
+</html>
