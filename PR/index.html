@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<!-- Use the HTML and CSS you developed in module 01 to fill out this template.-->
+<head>
+  <meta charset=utf-8 />
+  <title>Puerto Rico</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link rel='icon' href='https://newmapsplus.github.io/favicon.ico' type='image/x-icon' />
+
+  <!-- Add links to external css stylesheets. -->
+  <!-- Use the latest stable version @ leafletjs.com/download.html -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet" />
+  <link href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Average+Sans&family=Goudy+Bookletter+1911&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+  margin: 1em;
+  padding: 0;
+  background: #a3a1af;
+  font-weight: 300;
+  color: #2a2e31;
+  font-size: 100%;
+}
+header, section, footer {
+  width: 80%;
+  margin: 10px auto;
+}
+
+h1 {
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-size: 3.5em;
+    font-weight: 900;
+    letter-spacing: .04em;
+  }
+
+h2 {
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-size: 2em;
+    font-weight: 300;
+    letter-spacing: .04em;
+  }
+
+p {
+  font-family: 'Goudy Bookletter 1911', serif;
+  color:ghostwhite;
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+a {
+  color: #023a39;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin: 10px 0;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  height: 1px;
+  background: #d3d3d3;
+}
+
+.caption {
+  margin: 0 0 20px 0;
+  display: block;
+}
+
+
+#map {
+  width: 100%;
+  height: 540px;
+  margin: 10px auto;
+  border: 2px solid #d3d3d3;
+}
+
+.highlight {
+  color: #16f08e; 
+  font-weight: bold;
+}
+
+.img-fill {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  font-family: 'Goudy Bookletter 1911';
+  color: hsl(192, 78%, 76%);
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  font-family: 'Goudy Bookletter 1911';
+  background-color: #222;
+  padding: 2px 16px;
+  color: rgb(140, 209, 234);
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+  @media screen and (max-width: 900px) {
+  .first-column,
+  .second-column {
+    width: 100%;
+    }
+  }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <!-- Add header information -->
+    <h1>Puerto Rico</h1>
+  </header>
+  <section>
+    <!-- Add map and body content -->
+
+    <div id='map'></div>
+
+    <p>
+      Puerto Rico is an island in the Caribbean and a US territory.  
+      Three municipalities of Puerto Rico are San Juan, Ponce and Mayagüez.  
+      San Juan is located on the northern side of the island.
+      Ponce is located on the southern side of the island.  
+      Mayagüez is located on the western side of the island.
+
+    </p>
+   <br/>
+
+   <!-- Container for the image gallery -->
+<div class="container">
+
+  <!-- Full-width images with number text -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 4</div>
+      <img src="san_juan.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 4</div>
+      <img src="parque.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 4</div>
+      <img src="playa_sabaneta.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 4</div>
+      <img src="El-Morro-Puerto-Rico1.jpg" style="width:100%">
+  </div>
+
+    <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <!-- Thumbnail images -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="san_juan.jpg" style="width:100%" onclick="currentSlide(1)" alt="Old San Juan">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="parque.jpg" style="width:100%" onclick="currentSlide(2)" alt="Firehouse Museum, Ponce">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="playa_sabaneta.jpg" style="width:100%" onclick="currentSlide(3)" alt="Playa Sabaneta, Mayagüez">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="El-Morro-Puerto-Rico1.jpg" style="width:100%" onclick="currentSlide(4)" alt="Castillo San Felipe del Morro, San Juan">
+    </div>
+    </div>
+</div>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <p>
+       For more information: 
+       <a href="https://www.discoverpuertorico.com/">Puerto Rico Travel Guide</a> 
+
+    </p>
+    <br/>
+    <br/>
+    <ul>
+      <li>See my projects on GitHub: <a href="https://github.com/schroeder1303">Schroeder1303</a></li>
+      <li>Visit my <a href='https://github.com/schroeder1303'>mapping portfolio</a>.</li>
+      </ul>
+  </section>
+  <footer>
+    <!-- Add footer information -->
+    <hr/>
+
+    <a href="https://newmapsplus.github.io">
+          <img src="https://newmapsplus.github.io/assets/graphics/logo-2018-nmp-75px-h-gray.png" alt="University of Kentucky New Maps Plus">
+          </a>
+
+    <a href="https://uky-gis.github.io">
+          <img src="https://newmapsplus.github.io/assets/graphics/logo-2018-geography-75px-h.png" alt="University of Kentucky Department of Geography">
+    </a>
+    
+  </footer>
+
+  <!-- Add link to Leaflet JavaScript library. -->
+  <!-- Use the latest stable version @ leafletjs.com/download.html -->
+  <script src="http://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  <!-- Starter Javascript -->
+  <script>
+    // Map options control initial location and zoom level.
+    var options = {
+      center: [18.1220, -66.2549],
+      zoom: 9
+    }
+
+    // Create Leaflet map with above options.
+    var map = L.map('map', options);
+
+    // Get basemap URL from Leaflet Providers
+    var basemap_url = 'http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}'
+
+    // Get basemap attributes from Leaflet Providers
+    var basemap_attributes = {
+      attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      subdomains: 'abcd',
+      minZoom: 1,
+      maxZoom: 16,
+      ext: 'png'
+    }
+
+    // Add tileset as a layer in our map. 
+    var tiles = L.tileLayer(basemap_url, basemap_attributes).addTo(map);
+
+    // ************************************************** //
+
+    // STORING DATA AS VARIABLES IN ARRAYS
+
+    // variables referencing data values
+    var city1Name = "San Juan",
+      city1Coords = [18.466, -66.106],
+      city1Pop = 418140,
+      city1Capital = true,
+      city1State = "Puerto Rico";
+      
+
+    var city2Name = "Ponce",
+      city2Coords = [18.0111, -66.6104],
+      city2Pop = 137491,
+      city2Capital = false,
+      city2State = "Puerto Rico";
+
+    var city3Name = "Mayagüez",
+      city3Coords = [18.20107, -67.13962],
+      city3Pop = 73077,
+      city3Capital = false,
+      city3State = "Puerto Rico";
+
+    // arrays of data
+    var cities = [(city1Name), (city2Name), (city3Name)],
+      coords = [(city1Coords), (city2Coords), (city3Coords)],
+      populations = [(city1Pop), (city2Pop), (city3Pop)],
+      capitals = [(city1Capital), (city2Capital), (city3Capital)],
+      states = [(city1State), (city2State), (city3State)];
+      
+
+      console.log(cities);
+      console.log(capitals);
+      console.log(populations);
+
+
+    // ADDING FIRST MARKER TO MAP
+
+    // creating a string of the Popup content
+    var city1Popup = `<b>${cities[0]}</b><br>
+                      <b>population</b>: ${populations[0]}`;
+                      
+
+    if (capitals[0] == true) {
+      // concatenate a string to the existing string value
+      city1Popup += `<br>Capital of ${states[0]}`;
+    }
+
+    var city2Popup = `<b>${cities[1]}</b><br>
+                      <b>population</b>: ${populations[1]}`;
+
+    if (capitals[1] == true) {
+      // concatenate a string to the existing string value
+      city1Popup += `<br>Capital of ${states[1]}`;
+    }
+    
+    
+    var city3Popup = `<b>${cities[2]}</b><br>
+                      <b>population</b>: ${populations[2]}`;
+    
+    if (capitals[3] == true) {
+      // concatenate a string to the existing string value
+      city1Popup += `<br>Capital of ${states[3]}`;
+    }
+
+
+
+    // create the Leaflet marker using the coordinates
+    L.marker(coords[0])
+      .addTo(map) // add it to the map
+      .bindPopup(city1Popup); // bind the Popup
+
+    // ADDING SECOND MARKER TO MAP
+    L.marker(coords[1])
+      .addTo(map) // add it to the map
+      .bindPopup(city2Popup); // bind the Popup
+    
+    // ADDING THRID MARKER TO MAP
+    L.marker(coords[2])
+      .addTo(map) // add it to the map
+      .bindPopup(city3Popup); // bind the Popup
+
+  
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      // Next/previous controls
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      // Thumbnail image controls
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        let captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+
+  </script>
+
+</body>
+
+</html>
