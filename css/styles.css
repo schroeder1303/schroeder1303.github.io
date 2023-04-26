@@ -14,6 +14,12 @@ a {
 
 header {
   padding: 154px 0 100px;
+  text-shadow: #222 0px 0px 5px;
+  background-image: linear-gradient(45deg, rgba(61, 66, 78, 0.347), rgba(151, 136, 87, 0.417)), 
+  url('../PR/playa_sabaneta.jpg');
+  background-size: cover;
+  background-position: center;
+/* background-blend-mode: multiply; */
 }
 
 
