@@ -45,3 +45,8 @@ header {
 section {
   padding: 80px 0;
 }
+
+.card .card-img-top {
+  object-fit: cover;
+  height: calc(100px + 10vw);
+}
