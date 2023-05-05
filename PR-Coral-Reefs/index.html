@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Puerto Rico Coral Reefs</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911|EB+Garamond"
+      rel="stylesheet"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+    
+  </head>
+
+<body>
+    
+    <header>
+        <h1>Threat Level: Puerto Rico</h1>
+    </header>
+    
+    <section>
+        <div class="row">
+            <div id="map"></div>
+            <div id="legend"></div>
+            
+            <li>Data source:
+                Viehman, Shay; Buckel, Christine; Griffin, Sean; Groves, Sarah; Nemeth, Michael; Moore, Jennifer; Moore, Tom (2020). 
+                NCCOS Assessment: Assessment of Puerto Rico's coral reefs following Hurricanes Irma and Maria from 2017-09-16 to 2018-07-02 
+                (NCEI Accession 0221189). NOAA National Centers for Environmental Information. Dataset. https://doi.org/10.25921/a1c4-bg06. Accessed April 30, 2023.
+                <a
+                  href="https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:0221189"
+                  >NOAA</a></li>
+        </p>
+    </br>
+
+            <div class="row">
+                <h2>Coastal Crisis in Puerto Rico</h2>
+                <p>
+                    What's happening in Puerto Rico?
+                </p>
+                <p>
+                    The map above shows coral reef sites that were assessed following Hurricanes Irma and Maria that devastated
+                    Puerto Rico in 2017.  The data was collected during transect surveys and roving diver surveys between February 28
+                    and May 7, 2018.  The sites shown on the map are triaged sites - the level of damage has been classified as "Minor",
+                    "Moderate", or "Severe" and they have been given a restoration potential rating of "Low", "Medium", or "High".  
+                </p>
+                <p>
+                    Puerto Rico has been facing significant challenges in recent years, including high rates of unemployment, 
+                    uncertain status in terms of statehood or independence, lack of federal funding for social services, and a 
+                    weakened economy due to natural disasters.   Due to the financial and social tolls that have plagued the island, especially since
+                    Hurricane Maria in 2017, the government declared a state of emergency in April 2023.  Due to significant damage from hurricanes in recent years,
+                    Puerto Rico's coast has decreased significantly. 
+                  
+                </p>
+               <p>
+                    To address coastal erosion in Puerto Rico, it is essential for the Department of Natural Resources and other stakeholders to work 
+                    collaboratively and develop long-term solutions that consider the needs of the community and the environment.  
+                    This may involve policies such as promoting sustainable land use practices, 
+                    restoring and preserving the coastline and coral reefs, and implementing measures that consider the ecological dynamics of the coast. 
+                    Involving local communities in decision-making processes, 
+                    providing education and awareness programs, and ensuring that regulations are informed by scientific research and assessments can also contribute to effective coastal erosion management strategies.
+                    </p>
+                <p>    
+                    Short-term solutions, such as beach nourishment, can provide temporary protection against erosion, but may not be sustainable in the long run.  
+                    Building bans, such as the one in place in Rincon, Puerto Rico, can be more effective long-term solutions to prevent further development along vulnerable coastal areas.  
+                    Other measures, such as bolstering the health of existing coral reefs and introducing artificial coral reefs during non-hurricane seasons, can also protect the shoreline.  
+                    Challenges such as lack of funding and support from the federal government, ongoing lawsuits against FEMA, and issues with corruption in infrastructure development make it 
+                    difficult to rely solely on government-funded solutions. Therefore, local government policies and community engagement are crucial in implementing effective strategies for 
+                    addressing coastal erosion in Puerto Rico.
+                                     
+                </p>
+            </p>
+            </br>
+                <p>
+                 Further Reading:                  
+                <ul>
+                    <li>Puerto Rico has declared a state of emergency due to coastal erosion. <a href="https://apnews.com/article/puerto-rico-coastal-erosion-state-emergency-1cb74408d61a3feab6480efa69f94d0f">Link</a>.</li>
+                    <li>Locals resist coastal development of the island. <a href="https://www.theguardian.com/us-news/2022/jul/23/puerto-rico-beach-anti-gentrification-protests">Link.</a></li>
+                    <li>Government says to find to methods to combat coastal erosion as previous short-term solutions have failed. <a href="https://www.drna.pr.gov/noticias/drna-no-recomienda-soluciones-temporeras-ante-problema-de-erosion-costera/">Link.</a> (In Spanish)</li>
+                    <li>Puerto Rico groups sue FEMA for ignoring renewable energy sources while rebuilding power grid post Hurricane Maria. <a href="https://www.reuters.com/legal/fema-sued-over-lack-renewables-rebuilding-puerto-ricos-power-grid-2023-04-12/">Link.</a></li>
+                </ul>
+            </p>
+
+
+          </div>
+          <div class="row">
+              <img class="max-image-width"
+                  src="images/local_600.png"
+                  title="Local Threats to Puerto Rico Coral Reefs">
+              <div class="linkbox">
+                  Local Threats to Puerto Rico Coral Reefs.  From the metadata:
+                  Reef polygons are classified by estimated threat from coastal development. 
+                  The threat to coral reefs from coastal development was based on size of 
+                  cities, ports, and airports; size and density of hotels; and coastal population pressure 
+                  (a combination of population density, growth, and tourism growth). 
+                  Values of 0 indicate low threat, 100 indicate medium threat, 1000 indicate high threat.
+              </br>
+                  Link to <a href="images/local_1200x.png">high resolution image</a>.
+                  Link to <a href="https://www.wri.org/research/reefs-risk-revisited">data</a>.
+              </br>
+              <ul>
+                  <li>Map made using QGIS 3.24
+              
+              </div>
+          </div>
+
+      
+      <p>
+      <p>
+          <br>
+          <p><b>Social links</b></p>
+              <ul>
+                  <li>See my projects on GitHub: <a href="https://github.com/schroeder1303">Schroeder1303</a></li>
+                  <li>Visit my <a href='https://github.com/schroeder1303'>mapping portfolio</a>.</li>
+              </ul>
+      </div>
+  </section>
+
+  <footer>
+      <hr>
+  
+      <a href="https://newmapsplus.github.io">
+          <img src="https://newmapsplus.github.io/assets/graphics/logo-2018-nmp-75px-h-gray.png"
+              alt="University of Kentucky Geography">
+      </a>
+  
+      <a href="https://uky-gis.github.io">
+          <img src="https://newmapsplus.github.io/assets/graphics/logo-2018-geography-75px-h.png"
+              alt="University of Kentucky Geography">
+      </a>
+  
+  </footer>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"
+          ></script>
+          <script
+              src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+              integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+              crossorigin=""
+          ></script>
+          <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+          <script src="js/app.js"></script>
+      
+          
+        </body>
+      </html>                

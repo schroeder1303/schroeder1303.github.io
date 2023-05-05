@@ -1,0 +1,180 @@
+body {
+	margin: 1em;
+	padding: 0;
+	background: #91e6f1;
+	font-weight: 300;
+	color: #040404;
+	font-size: 100%;
+}
+
+header, section, footer {
+	width: 80%;
+	margin: 20px auto;
+}
+
+h1 {
+    font-family: 'Goudy Bookletter 1991', serif;
+    font-size: 3em;
+    font-weight: 900;
+    letter-spacing: .04em;
+}
+
+h2 {
+    font-family: 'Goudy Bookletter 1991', serif;
+    font-size: 2em;
+    font-weight: 300;
+    letter-spacing: .04em;
+}
+
+p {
+  font-family: 'Goudy Bookletter 1991', serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+
+a {
+  color: #0044aa;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin: 10px 0;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  height: 1px;
+  background: #d3d3d3;
+}
+
+.caption {
+  margin: 0 0 20px 0;
+  display: block;
+}
+		
+#map {
+	width: 100%;
+	height: 700px;
+}
+
+.max-image-width {
+  width: 100%;
+}
+
+/* Use float property to make two-column layout */
+.first-column {
+  float: left;
+  width: 49%;
+  padding-right: 2%;
+}
+
+.column {
+  float: left;
+  width: 49%;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* When browser is 900px wide or less */
+@media screen and (max-width: 900px) {
+
+  .first-column,
+  .second-column {
+    width: 100%;
+  }
+}
+
+.legend {
+  font-size: 1rem;
+  border-radius: 5px;
+  max-width: 200px;
+  font-family: "Goudy Bookletter 1911", serif;
+  background: rgba(89, 98, 99, 0.9);
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.legend h3 {
+  font-size: 1.1em;
+  font-weight: normal;
+  color: #ddd;
+  margin: 0 0 10px 0;
+}
+
+.legend span {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px 4px 0;
+}
+
+.legend label {
+  font-size: 0.9rem;
+}
+
+.container-fluid {
+  background-color: #333;
+}
+
+#dropdown-ui {
+  appearance: none;
+  outline: none;
+  border: none;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: 'Libre Caslon Text', serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+a:hover {
+  color: rgb(130, 131, 132);
+  text-decoration: none;
+}
+
+/* Custom Tool tips */
+.leaflet-tooltip-own {
+  background: rgba(58, 58, 58, 0.955);
+  color: rgb(244, 244, 244);
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: "Goudy Bookletter 1911", serif;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-tooltip-left:before {
+  right: 0;
+  margin-right: -12px;
+  border-left-color: rgba(0, 0, 0, 0.4);
+}
+
+.leaflet-tooltip-right:before {
+  left: 0;
+  margin-left: -12px;
+  border-right-color: rgba(0, 0, 0, 0.4);
+}
