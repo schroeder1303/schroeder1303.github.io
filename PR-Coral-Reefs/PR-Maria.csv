@@ -1,0 +1,56 @@
+﻿Year,Date,SampleType,Territory,SiteName,SiteId,RestorePotential,SiteDamage,Latitude,Longitude
+2018,6/14/2018,FEMA Triage,Puerto Rico,Isla Verde Reserve,307,Medium,Minor,18.44962,-66.01497
+2018,2/25/2018,FEMA Triage,Puerto Rico,Arrecife Mosquito,25,Low,Moderate,18.16166,-65.4983
+2018,4/24/2018,FEMA Triage,Puerto Rico,Bajo Merail 2,231,Low,Moderate,18.14918,-65.48993
+2018,3/21/2018,FEMA Triage,Puerto Rico,Carlos Rosario 1,89,Low,Moderate,18.33066482,-65.33306656
+2018,3/22/2018,FEMA Triage,Puerto Rico,Carlos Rosario 2,85,Low,Moderate,18.32455,-65.3315
+2018,2/27/2018,FEMA Triage,Puerto Rico,Cayo Diablo,18,Medium,Moderate,18.36068,-65.53094
+2018,4/27/2018,FEMA Triage,Puerto Rico,Penon de Mera,227,Low,Moderate,18.488052,-66.675245
+2018,2/15/2018,Pre-FEMA Triage,Puerto Rico,Buye,500,Low,Moderate,18.03788,-67.20969
+2017,11/21/2017,Pre-FEMA Triage,Puerto Rico,Corral,501,Low,Moderate,17.94599,-67.01721
+2018,1/18/2018,Pre-FEMA Triage,Puerto Rico,Guanica,504,Medium,Moderate,17.9367,-66.88678
+2017,11/10/2017,Pre-FEMA Triage,Puerto Rico,Lobos,505,High,Moderate,18.3746,-65.5684
+2017,9/16/2017,Pre-FEMA Triage,Puerto Rico,Shacks,516,Low,Moderate,18.51601,-67.10203
+2018,3/14/2018,FEMA Triage,Puerto Rico,Bajo Merail 1,81,Low,Severe,18.14889,-65.49018
+2018,4/12/2018,FEMA Triage,Puerto Rico,Carlos Rosario 4,229,Medium,Severe,18.33106,-65.33291
+2018,3/1/2018,FEMA Triage,Puerto Rico,Cayo Largo 1,32,High,Severe,18.30833,-65.57735
+2018,3/2/2018,FEMA Triage,Puerto Rico,Cayo Largo 2,33,High,Severe,18.30553,-65.57864
+2018,4/4/2018,FEMA Triage,Puerto Rico,Cayo Largo 3,128,High,Severe,18.30945,-65.57779
+2018,4/6/2018,FEMA Triage,Puerto Rico,Cayo Largo 4,130,High,Severe,18.30618,-65.57887
+2018,4/9/2018,FEMA Triage,Puerto Rico,Cayo Largo 5,228,High,Severe,18.30662,-65.57951
+2018,5/30/2018,FEMA Triage,Puerto Rico,Cayo Largo 6,292,High,Severe,18.31403,-65.5791
+2018,5/31/2018,FEMA Triage,Puerto Rico,Cayo Largo 7,293,High,Severe,18.31447,-65.57917
+2018,6/2/2018,FEMA Triage,Puerto Rico,Cayo Largo 8,296,High,Severe,18.31472,-65.57938
+2018,6/3/2018,FEMA Triage,Puerto Rico,Cayo Largo 9,295,High,Severe,18.31531,-65.57965
+2018,4/27/2018,FEMA Triage,Puerto Rico,Cueva del Indio,226,Low,Severe,18.4914,-66.6425
+2018,5/8/2018,FEMA Triage,Puerto Rico,Dominoes 1,288,High,Severe,18.46086,-66.05177
+2018,5/14/2018,FEMA Triage,Puerto Rico,Dominoes 1,291,High,Severe,18.46029,-66.05295
+2018,6/13/2018,FEMA Triage,Puerto Rico,Dominoes 1,311,High,Severe,18.46167,-66.0513
+2018,5/11/2018,FEMA Triage,Puerto Rico,Dominoes 2,290,High,Severe,18.46029,-66.05295
+2018,6/8/2018,FEMA Triage,Puerto Rico,Dominoes 3,302,High,Severe,18.46167,-66.0513
+2018,3/19/2018,FEMA Triage,Puerto Rico,Los Corchos 1,83,High,Severe,18.27982,-65.24931
+2018,3/20/2018,FEMA Triage,Puerto Rico,Los Corchos 2,86,High,Severe,18.27825,-65.24964
+2018,3/24/2018,FEMA Triage,Puerto Rico,Los Corchos 3,97,High,Severe,18.28042,-65.24915
+2018,6/5/2018,FEMA Triage,Puerto Rico,Morcillas 1,298,High,Severe,18.45905,-66.03724
+2018,6/6/2018,FEMA Triage,Puerto Rico,Morcillas 2,300,High,Severe,18.45923,-66.03831
+2018,3/25/2018,FEMA Triage,Puerto Rico,Punta Maguey 1,125,Medium,Severe,18.29336,-65.30117
+2018,5/23/2018,FEMA Triage,Puerto Rico,Vega Baja,312,High,Severe,18.49226,-66.4088
+2018,3/13/2018,FEMA Triage,Puerto Rico,VQ South Bank 1,80,High,Severe,18.08228,-65.48971
+2018,4/26/2018,FEMA Triage,Puerto Rico,VQ South Bank 2,233,High,Severe,18.08134,-65.48733
+2017,11/16/2017,Pre-FEMA Triage,Puerto Rico,Diablo,502,High,Severe,18.35988,-65.53233
+2018,4/24/2018,Pre-FEMA Triage,Puerto Rico,Eco,503,High,Severe,18.49226,-66.4088
+2017,11/1/2017,Pre-FEMA Triage,Puerto Rico,Negro 1,506,High,Severe,18.15284,-67.24231
+2017,10/31/2017,Pre-FEMA Triage,Puerto Rico,Negro 2,507,High,Severe,18.15294,-67.24366
+2017,11/1/2017,Pre-FEMA Triage,Puerto Rico,Negro 3,508,High,Severe,18.15113,-67.24417
+2017,11/10/2017,Pre-FEMA Triage,Puerto Rico,Negro 4,509,High,Severe,18.15274,-67.24381
+2017,11/10/2017,Pre-FEMA Triage,Puerto Rico,Negro 5,510,High,Severe,18.15001,-67.2432
+2017,11/18/2017,Pre-FEMA Triage,Puerto Rico,Palominito,511,High,Severe,18.33995,-65.5634
+2017,11/17/2017,Pre-FEMA Triage,Puerto Rico,Palomino North,512,High,Severe,18.35371,-65.57275
+2018,2/6/2018,Pre-FEMA Triage,Puerto Rico,Ron 1,513,High,Severe,18.0954,-67.28477
+2018,2/21/2018,Pre-FEMA Triage,Puerto Rico,Ron 2,514,High,Severe,18.0954,-67.28534
+2017,11/28/2017,Pre-FEMA Triage,Puerto Rico,Ron 3,515,High,Severe,18.10257,-67.28539
+2018,3/23/2018,Pre-FEMA Triage,Puerto Rico,Tamarindo,517,High,Severe,18.31464,-65.31828
+2017,11/20/2017,Pre-FEMA Triage,Puerto Rico,Tamarindo Chico,518,High,Severe,18.3117,-65.31635
+2018,4/25/2018,Pre-FEMA Triage,Puerto Rico,Tractores,519,High,Severe,18.49173,-66.41444
+2018,4/5/2018,Pre-FEMA Triage,Puerto Rico,Tres Palmas,524,High,Severe,18.35042,-67.2663
+2017,12/22/2017,Pre-FEMA Triage,Puerto Rico,Tres Palmas,523,High,Severe,18.35157,-67.26754
